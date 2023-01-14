@@ -23,7 +23,8 @@ public class UserDaoJDBCImpl implements UserDao {
                     "id INT PRIMARY KEY AUTO_INCREMENT,name VARCHAR(30), lastName VARCHAR(35), age INT)");
             System.out.println("Таблица создана");
         } catch (SQLException e){
-            throw new RuntimeException("Не удалось создать таблицу");
+            e.printStackTrace();
+            System.out.println("Не удалось создать таблицу");
         }
 
     }
@@ -34,7 +35,8 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Таблица удалена");
 
         } catch (SQLException e){
-            throw new RuntimeException("Не удалось удалить таблицу");
+            e.printStackTrace();
+            System.out.println("Не удалось удалить таблицу");
         }
 
     }
@@ -45,7 +47,8 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("User с именем – " + name + " добавлен в базу данных");
 
         } catch (SQLException e){
-            throw new RuntimeException("Не удалось добавить пользователя");
+            e.printStackTrace();
+            System.out.println("Не удалось добавить пользователя");
         }
 
     }
@@ -56,7 +59,8 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Пользователь удален");
 
         } catch (SQLException e){
-            throw new RuntimeException("Не удалось удалить пользователя");
+            e.printStackTrace();
+            System.out.println("Не удалось удалить пользователя");
         }
 
     }
@@ -71,7 +75,8 @@ public class UserDaoJDBCImpl implements UserDao {
                 allUsers.add (user);
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Не удалось получить данные о всех пользователях");
+            e.printStackTrace();
+            System.out.println("Не удалось получить данные о всех пользователях");
         }
         return allUsers;
     }
@@ -82,7 +87,8 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Данные удалены");
 
         } catch (SQLException e){
-            throw new RuntimeException("Не удалось удалить данные");
+            e.printStackTrace();
+            System.out.println("Не удалось удалить данные");
         }
 
     }
